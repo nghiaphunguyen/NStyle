@@ -16,6 +16,6 @@ public extension NSObject {
     }
     
     public func nk_classes(classNames: NKStringConvertible...) -> Self {
-        return self.nk_class(classNames, withStylist: CSS)
+        return self.nk_classes(classNames, withStylist: CSS)
     }
 }
