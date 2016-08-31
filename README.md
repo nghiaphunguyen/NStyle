@@ -1,5 +1,5 @@
 # NStyle 0.1
-**NStyle** help you reuse UI styles. It is refactored from [Fashion](https://github.com/vadymmarkov/Fashion).
+**NStyle** helps you reuse UI styles. It is refactored from [Fashion](https://github.com/vadymmarkov/Fashion).
 
 # CHANGE LOG
 
