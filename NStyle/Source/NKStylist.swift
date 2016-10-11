@@ -11,7 +11,7 @@ import Foundation
 public typealias NKStylable = Any
 
 public protocol NKStylist {
-    func registerClass<T: NKStylable>(name: NKStringConvertible, stylization: (model: T) -> Void)
+    func registerClass<T: NKStylable>(name: NKStringConvertible, stylization: @escaping (_ model: T) -> Void)
     func unregisterClass(name: NKStringConvertible)
     func style<T: NKStylable>(model: T, withClasses classes: [NKStringConvertible])
     func registerStyleSheets(stylesheets: [NKStylesheet])
@@ -21,12 +21,12 @@ public protocol NKStylist {
 public extension NKStylist {
     public func registerStyleSheets(stylesheets: [NKStylesheet]) {
         stylesheets.forEach { (sheet) in
-            sheet.build(self)
+            sheet.build(stylist: self)
         }
     }
     
     public func registerStyleSheets(stylesheets: NKStylesheet...) {
-        self.registerStyleSheets(stylesheets as [NKStylesheet])
+        self.registerStyleSheets(stylesheets: stylesheets as [NKStylesheet])
     }
 }
 
@@ -39,9 +39,9 @@ public final class NKStylistImp: AnyObject {
     
     private init() {}
     
-    private typealias StylableClosure = NKStylable -> Void
+    typealias StylableClosure = (NKStylable) -> Void
     
-    private var styles = [String: StylableClosure]()
+    var styles = [String: StylableClosure]()
 }
 
 extension NKStylistImp: NKStylist {
@@ -55,7 +55,7 @@ extension NKStylistImp: NKStylist {
         }
     }
     
-    public func registerClass<T : NKStylable>(name: NKStringConvertible, stylization: (model: T) -> Void) {
+    public func registerClass<T : NKStylable>(name: NKStringConvertible, stylization: @escaping (_ model: T) -> Void) {
         self.styles[name.string] = NKStyle(closure: stylization).execute
     }
     

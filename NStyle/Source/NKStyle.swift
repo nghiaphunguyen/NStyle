@@ -9,9 +9,9 @@
 import Foundation
 
 final class NKStyle<T: NKStylable> {
-    var closure: (model: T) -> Void
+    var closure: (_ model: T) -> Void
     
-    init(closure: (model: T) -> Void) {
+    init(closure: @escaping (_ model: T) -> Void) {
         self.closure = closure
     }
     
@@ -20,6 +20,6 @@ final class NKStyle<T: NKStylable> {
             return
         }
         
-        self.closure(model: model)
+        self.closure(model)
     }
 }

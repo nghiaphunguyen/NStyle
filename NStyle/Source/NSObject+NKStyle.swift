@@ -10,12 +10,12 @@ import Foundation
 
 public extension NSObject {
     public func nk_classes(classNames: [NKStringConvertible], withStylist stylist: NKStylist = CSS) -> Self {
-        stylist.style(self, withClasses: classNames)
+        stylist.style(model: self, withClasses: classNames)
         
         return self
     }
     
     public func nk_classes(classNames: NKStringConvertible...) -> Self {
-        return self.nk_classes(classNames, withStylist: CSS)
+        return self.nk_classes(classNames: classNames, withStylist: CSS)
     }
 }
