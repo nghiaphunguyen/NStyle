@@ -9,11 +9,11 @@
 import Foundation
 
 public protocol NKStringConvertible {
-    var string: String { get }
+    var rawValue: String { get }
 }
 
 extension String: NKStringConvertible {
-    public var string: String {
+    public var rawValue: String {
         return self
     }
 }

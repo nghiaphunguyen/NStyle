@@ -30,7 +30,7 @@ public extension NKStylist {
     }
 }
 
-public var CSS: NKStylist {
+public var NKCSS: NKStylist {
     return NKStylistImp.sharedInstance
 }
 
@@ -47,7 +47,7 @@ public final class NKStylistImp: AnyObject {
 extension NKStylistImp: NKStylist {
     public func style<T: NKStylable>(model: T, withClasses classes: [NKStringConvertible]) {
         classes.forEach { name in
-            guard let closure = self.styles[name.string] else {
+            guard let closure = self.styles[name.rawValue] else {
                 return
             }
             
@@ -56,10 +56,10 @@ extension NKStylistImp: NKStylist {
     }
     
     public func registerClass<T : NKStylable>(name: NKStringConvertible, stylization: @escaping (_ model: T) -> Void) {
-        self.styles[name.string] = NKStyle(closure: stylization).execute
+        self.styles[name.rawValue] = NKStyle(closure: stylization).execute
     }
     
     public func unregisterClass(name: NKStringConvertible) {
-        self.styles[name.string] = nil
+        self.styles[name.rawValue] = nil
     }
 }

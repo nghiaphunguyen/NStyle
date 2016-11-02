@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NStyle"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "NStyle help you reuse UI styles"
   s.homepage     = "http://knacker.com"
   s.license      = "MIT"
