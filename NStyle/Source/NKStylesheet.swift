@@ -12,7 +12,7 @@ public protocol NKStylesheet {
     static func build(stylist: NKStylist)
 }
 
-typealias NKClassStylesheet = NKClassIdentifier & NKSpecificStylesheet
+public typealias NKClassStylesheet = NKClassIdentifier & NKSpecificStylesheet
 
 public protocol NKSpecificStylesheet: NKStylesheet {
     
