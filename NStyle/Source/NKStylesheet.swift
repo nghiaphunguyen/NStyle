@@ -31,7 +31,7 @@ public struct NKSpecificStylist<T: NKStylable> {
     
     let stylist: NKStylist
     
-    public func registerClass(_ name: NKClassIdentifier, stylization: @escaping (_ model: T) -> Void) {
+    public func registerClass(_ name: NKClassIdentifier, _ stylization: @escaping (_ model: T) -> Void) {
         self.registerClass(name: name, stylization: stylization)
     }
 }
