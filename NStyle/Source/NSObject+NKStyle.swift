@@ -9,13 +9,13 @@
 import Foundation
 
 public extension NSObject {
-    public func nk_classes(classNames: [NKStringConvertible], withStylist stylist: NKStylist = NKCSS) -> Self {
+    public func nk_classes(classNames: [NKClassIdentifier], withStylist stylist: NKStylist = NKCSS) -> Self {
         stylist.style(model: self, withClasses: classNames)
         
         return self
     }
     
-    public func nk_classes(_ classNames: NKStringConvertible...) -> Self {
+    public func nk_classes(_ classNames: NKClassIdentifier...) -> Self {
         return self.nk_classes(classNames: classNames, withStylist: NKCSS)
     }
 }

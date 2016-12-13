@@ -12,7 +12,7 @@
 		18703F851D7670E300BFB829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18703F831D7670E300BFB829 /* Main.storyboard */; };
 		18703F871D7670E300BFB829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18703F861D7670E300BFB829 /* Assets.xcassets */; };
 		18703F8A1D7670E300BFB829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18703F881D7670E300BFB829 /* LaunchScreen.storyboard */; };
-		18703F971D7672C600BFB829 /* NKStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18703F921D7672C600BFB829 /* NKStringConvertible.swift */; };
+		18703F971D7672C600BFB829 /* NKClassIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18703F921D7672C600BFB829 /* NKClassIdentifier.swift */; };
 		18703F981D7672C600BFB829 /* NKStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18703F931D7672C600BFB829 /* NKStyle.swift */; };
 		18703F991D7672C600BFB829 /* NKStylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18703F941D7672C600BFB829 /* NKStylesheet.swift */; };
 		18703F9A1D7672C600BFB829 /* NKStylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18703F951D7672C600BFB829 /* NKStylist.swift */; };
@@ -27,7 +27,7 @@
 		18703F861D7670E300BFB829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18703F891D7670E300BFB829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18703F8B1D7670E300BFB829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18703F921D7672C600BFB829 /* NKStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKStringConvertible.swift; sourceTree = "<group>"; };
+		18703F921D7672C600BFB829 /* NKClassIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKClassIdentifier.swift; sourceTree = "<group>"; };
 		18703F931D7672C600BFB829 /* NKStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKStyle.swift; sourceTree = "<group>"; };
 		18703F941D7672C600BFB829 /* NKStylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKStylesheet.swift; sourceTree = "<group>"; };
 		18703F951D7672C600BFB829 /* NKStylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKStylist.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		18703F911D7672C600BFB829 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				18703F921D7672C600BFB829 /* NKStringConvertible.swift */,
+				18703F921D7672C600BFB829 /* NKClassIdentifier.swift */,
 				18703F931D7672C600BFB829 /* NKStyle.swift */,
 				18703F941D7672C600BFB829 /* NKStylesheet.swift */,
 				18703F951D7672C600BFB829 /* NKStylist.swift */,
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18703F9B1D7672C600BFB829 /* NSObject+NKStyle.swift in Sources */,
-				18703F971D7672C600BFB829 /* NKStringConvertible.swift in Sources */,
+				18703F971D7672C600BFB829 /* NKClassIdentifier.swift in Sources */,
 				18703F821D7670E300BFB829 /* ViewController.swift in Sources */,
 				18703F981D7672C600BFB829 /* NKStyle.swift in Sources */,
 				18703F9A1D7672C600BFB829 /* NKStylist.swift in Sources */,

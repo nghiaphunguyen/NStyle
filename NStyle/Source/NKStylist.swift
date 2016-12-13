@@ -11,22 +11,22 @@ import Foundation
 public typealias NKStylable = Any
 
 public protocol NKStylist {
-    func registerClass<T: NKStylable>(name: NKStringConvertible, stylization: @escaping (_ model: T) -> Void)
-    func unregisterClass(name: NKStringConvertible)
-    func style<T: NKStylable>(model: T, withClasses classes: [NKStringConvertible])
-    func registerStyleSheets(stylesheets: [NKStylesheet])
-    func registerStyleSheets(stylesheets: NKStylesheet...)
+    func registerClass<T: NKStylable>(name: NKClassIdentifier, stylization: @escaping (_ model: T) -> Void)
+    func unregisterClass(name: NKClassIdentifier)
+    func style<T: NKStylable>(model: T, withClasses classes: [NKClassIdentifier])
+    func registerStyleSheets(stylesheets: [NKStylesheet.Type])
+    func registerStyleSheets(stylesheets: NKStylesheet.Type...)
 }
 
 public extension NKStylist {
-    public func registerStyleSheets(stylesheets: [NKStylesheet]) {
+    public func registerStyleSheets(stylesheets: [NKStylesheet.Type]) {
         stylesheets.forEach { (sheet) in
             sheet.build(stylist: self)
         }
     }
     
-    public func registerStyleSheets(stylesheets: NKStylesheet...) {
-        self.registerStyleSheets(stylesheets: stylesheets as [NKStylesheet])
+    public func registerStyleSheets(stylesheets: NKStylesheet.Type...) {
+        self.registerStyleSheets(stylesheets: stylesheets as [NKStylesheet.Type])
     }
 }
 
@@ -45,7 +45,7 @@ public final class NKStylistImp: AnyObject {
 }
 
 extension NKStylistImp: NKStylist {
-    public func style<T: NKStylable>(model: T, withClasses classes: [NKStringConvertible]) {
+    public func style<T: NKStylable>(model: T, withClasses classes: [NKClassIdentifier]) {
         classes.forEach { name in
             guard let closure = self.styles[name.rawValue] else {
                 return
@@ -55,11 +55,11 @@ extension NKStylistImp: NKStylist {
         }
     }
     
-    public func registerClass<T : NKStylable>(name: NKStringConvertible, stylization: @escaping (_ model: T) -> Void) {
+    public func registerClass<T : NKStylable>(name: NKClassIdentifier, stylization: @escaping (_ model: T) -> Void) {
         self.styles[name.rawValue] = NKStyle(closure: stylization).execute
     }
     
-    public func unregisterClass(name: NKStringConvertible) {
+    public func unregisterClass(name: NKClassIdentifier) {
         self.styles[name.rawValue] = nil
     }
 }
